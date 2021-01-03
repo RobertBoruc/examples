@@ -1,0 +1,103 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: darkolivegreen;
+    font-family: audiowide;
+    color: #fff;
+    font-size: 14px;
+}
+
+.panels {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: inset 0 0 0 3px rgba(255, 255, 255, .1);
+    font-size: 40px;
+    transition:
+        font-size 0.7s cubic-bezier(0.1, 2.7, 0.58, 1),
+        flex 0.7s cubic-bezier(0.1, 2.7, 0.58, 1),
+        background 0.2s;
+    border-radius: 3px;
+}
+
+.panel>* {
+    margin: 0;
+    width: 100%;
+    transition: transform .5s;
+    flex: 1 0 auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.panel>*:first-child {
+    transform: translateY(-100%);
+}
+
+.panel>*:last-child {
+    transform: translateY(100%);
+}
+
+.panel.open-active>*:first-child {
+    transform: translateY(0);
+}
+
+.panel.open-active>*:last-child {
+    transform: translateY(0);
+}
+
+.panel.open {
+    flex: 5;
+    font-size: 60px;
+}
+
+.panel1 {
+    background-image: url('http://unsplash.it/800/500?image=1075');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.panel2 {
+    background-image: url('http://unsplash.it/800/500?image=1076');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.panel3 {
+    background-image: url('http://unsplash.it/800/500?image=1078');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.panel4 {
+    background-image: url('http://unsplash.it/800/500?image=1081');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.panel5 {
+    background-image: url('http://unsplash.it/800/500?image=122');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.panel6 {
+    background-image: url('http://unsplash.it/800/500?image=134');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
