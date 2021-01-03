@@ -39,14 +39,14 @@ input.search {
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.7), inset 0 0 2px rgba(0, 0, 0, 0.19);
 }
 
-.results {
+.suggestions {
     margin: 0;
     padding: 0;
     position: relative;
     /*perspective: 20px;*/
 }
 
-.results li {
+.suggestions li {
     background: white;
     list-style: none;
     border-bottom: 1px solid #D8D8D8;
@@ -59,13 +59,13 @@ input.search {
     text-transform: capitalize;
 }
 
-.results li:nth-child(even) {
+.suggestions li:nth-child(even) {
     border-radius: 3px;
     transform: perspective(100px) rotateX(2deg) translateY(1px) scale(1.001);
     background: linear-gradient(to bottom, #ffffff 0%, #EFEFEF 100%);
 }
 
-.results li:nth-child(odd) {
+.suggestions li:nth-child(odd) {
     border-radius: 3px;
     transform: perspective(100px) rotateX(-2deg) translateY(1px);
     background: linear-gradient(to top, #ffffff 0%, #EFEFEF 100%);
