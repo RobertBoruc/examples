@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fetch cities</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <form class="search-form">
+        <input type="text" class="search" placeholder="Miasto lub stan">
+        <ul class="results">
+            <li>Wpisz miasto</li>
+            <li>lub stan</li>
+        </ul>
+    </form>
+    <script>
+        const endpoint =
+            'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+        const cities = [];
+
+        fetch(endpoint)
+            .then(bigData => bigData.json()) //konwercja na JSON
+            .then(data => cities.push(...data)) //wciśniecie (spread) miast do tabeli cities
+
+        function findMathes(wordToMach, cities) {
+            return cities.filter(place => {
+                const regex = new RegExp(wordToMach, 'gi');
+                return place.city.match(regex) || place.state.match(regex)
+            });
+        };
+
+        function displayMathes() {
+            const mathArr = findMathes(this.value, cities);
+            const html = mathArr.map(place => {
+                return `
+                <li>
+                    <span class='name'>${place.city}, ${place.state}</span>
+                    <span class='population'>${place.population}</span>
+                </li>    
+                `;
+            }).join('');
+            results.innerHTML = html;
+        };
+
+        const searchInput = document.querySelector('.search');
+        const results = document.querySelectorAll('.results');
+
+        searchInput.addEventListener('change', displayMathes);
+        searchInput.addEventListener('keyup', displayMathes);
+    </script>
+</body>
+
+</html>
